@@ -1,0 +1,9 @@
+[
+    {
+    "address": "10,Main Street,Cairns,Qld",
+    "imageName": "PropertyResources/house1.jpg",
+    "thumbnailName": "Resources/thumbnail_house1.jpg",
+    "type": "House",
+    "price": 250
+    }
+]

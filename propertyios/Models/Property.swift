@@ -12,9 +12,11 @@ struct Property: Decodable {
     var imageName: String
     var thumbnailName: String
     var type: PropertyType
-    var price: Int
+    var price: String
 }
 
 enum PropertyType: String, Decodable {
     case House = "House"
+    case Unit = "Unit"
+    case Land = "Land"
 }

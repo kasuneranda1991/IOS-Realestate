@@ -38,6 +38,10 @@
 		3A2F8FDD2B53F349007D31C6 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F8FDC2B53F349007D31C6 /* Property.swift */; };
 		3A2F8FDF2B53F4D9007D31C6 /* PropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F8FDE2B53F4D9007D31C6 /* PropertyModel.swift */; };
 		3A9B30422B5C9717000B2A33 /* properties.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A9B30412B5C9717000B2A33 /* properties.json */; };
+		3AA2FDB72B634CA200F73924 /* NewProperty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2FDB62B634CA200F73924 /* NewProperty.storyboard */; };
+		3AA2FDB92B6350DC00F73924 /* NewPropertyAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2FDB82B6350DC00F73924 /* NewPropertyAddViewController.swift */; };
+		3AA2FDBB2B63548D00F73924 /* PropertyDeatils.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA2FDBA2B63548D00F73924 /* PropertyDeatils.storyboard */; };
+		3AA2FDBD2B63570F00F73924 /* PropertyDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA2FDBC2B63570F00F73924 /* PropertyDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,13 +71,17 @@
 		3A2F8FBD2B53EE85007D31C6 /* land2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = land2.jpg; sourceTree = "<group>"; };
 		3A2F8FBE2B53EE85007D31C6 /* thumbnail_land2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbnail_land2.jpg; sourceTree = "<group>"; };
 		3A2F8FBF2B53EE85007D31C6 /* thumbnail_land1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbnail_land1.jpg; sourceTree = "<group>"; };
-		3A2F8FC02B53EE85007D31C6 /* house1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house1.jpg; sourceTree = "<group>"; };
+		3A2F8FC02B53EE85007D31C6 /* house1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = house1.jpg; path = propertyios/house1.jpg; sourceTree = SOURCE_ROOT; };
 		3A2F8FC12B53EE85007D31C6 /* thumbnail_unit3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbnail_unit3.jpg; sourceTree = "<group>"; };
 		3A2F8FC22B53EE85007D31C6 /* thumbnail_unit1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = thumbnail_unit1.jpg; sourceTree = "<group>"; };
 		3A2F8FC32B53EE85007D31C6 /* house2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = house2.jpg; sourceTree = "<group>"; };
 		3A2F8FDC2B53F349007D31C6 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		3A2F8FDE2B53F4D9007D31C6 /* PropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyModel.swift; sourceTree = "<group>"; };
 		3A9B30412B5C9717000B2A33 /* properties.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = properties.json; sourceTree = "<group>"; };
+		3AA2FDB62B634CA200F73924 /* NewProperty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewProperty.storyboard; sourceTree = "<group>"; };
+		3AA2FDB82B6350DC00F73924 /* NewPropertyAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPropertyAddViewController.swift; sourceTree = "<group>"; };
+		3AA2FDBA2B63548D00F73924 /* PropertyDeatils.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PropertyDeatils.storyboard; sourceTree = "<group>"; };
+		3AA2FDBC2B63570F00F73924 /* PropertyDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,18 +120,14 @@
 				3A2F8F9B2B53DB8C007D31C6 /* ViewController.swift */,
 				3A2F8FAB2B53DC60007D31C6 /* PropertyListViewController.swift */,
 				3A2F8FAD2B53DC7A007D31C6 /* PropertyFavouritesViewController.swift */,
+				3AA2FDB82B6350DC00F73924 /* NewPropertyAddViewController.swift */,
+				3AA2FDBC2B63570F00F73924 /* PropertyDetailsViewController.swift */,
 				3A2F8F9D2B53DB8C007D31C6 /* Main.storyboard */,
-				3A2F8FA02B53DB8E007D31C6 /* Assets.xcassets */,
-				3A2F8FAF2B53EDCE007D31C6 /* Resources */,
+				3AA2FDB62B634CA200F73924 /* NewProperty.storyboard */,
+				3AA2FDBA2B63548D00F73924 /* PropertyDeatils.storyboard */,
 				3A2F8FA22B53DB8E007D31C6 /* LaunchScreen.storyboard */,
+				3A2F8FA02B53DB8E007D31C6 /* Assets.xcassets */,
 				3A2F8FA52B53DB8E007D31C6 /* Info.plist */,
-			);
-			path = propertyios;
-			sourceTree = "<group>";
-		};
-		3A2F8FAF2B53EDCE007D31C6 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
 				3A9B30412B5C9717000B2A33 /* properties.json */,
 				3A2F8FC02B53EE85007D31C6 /* house1.jpg */,
 				3A2F8FC32B53EE85007D31C6 /* house2.jpg */,
@@ -146,7 +150,7 @@
 				3A2F8FB82B53EE85007D31C6 /* unit2.jpg */,
 				3A2F8FB92B53EE85007D31C6 /* unit3.jpg */,
 			);
-			path = Resources;
+			path = propertyios;
 			sourceTree = "<group>";
 		};
 		3A2F8FD82B53EEC1007D31C6 /* Models */ = {
@@ -186,7 +190,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					3A2F8F932B53DB8C007D31C6 = {
 						CreatedOnToolsVersion = 14.2;
@@ -216,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA2FDBB2B63548D00F73924 /* PropertyDeatils.storyboard in Resources */,
 				3A2F8FC52B53EE85007D31C6 /* new.jpg in Resources */,
 				3A2F8FA42B53DB8E007D31C6 /* LaunchScreen.storyboard in Resources */,
 				3A2F8FC62B53EE85007D31C6 /* land3.jpg in Resources */,
@@ -237,6 +242,7 @@
 				3A2F8F9F2B53DB8C007D31C6 /* Main.storyboard in Resources */,
 				3A9B30422B5C9717000B2A33 /* properties.json in Resources */,
 				3A2F8FC82B53EE85007D31C6 /* thumbnail_house3.jpg in Resources */,
+				3AA2FDB72B634CA200F73924 /* NewProperty.storyboard in Resources */,
 				3A2F8FC72B53EE85007D31C6 /* thumbnail_house2.jpg in Resources */,
 				3A2F8FD42B53EE85007D31C6 /* house1.jpg in Resources */,
 				3A2F8FC42B53EE85007D31C6 /* thumbnail_land3.jpg in Resources */,
@@ -250,10 +256,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AA2FDBD2B63570F00F73924 /* PropertyDetailsViewController.swift in Sources */,
 				3A2F8FDF2B53F4D9007D31C6 /* PropertyModel.swift in Sources */,
 				3A2F8FDD2B53F349007D31C6 /* Property.swift in Sources */,
 				3A2F8F9C2B53DB8C007D31C6 /* ViewController.swift in Sources */,
 				3A2F8F982B53DB8C007D31C6 /* AppDelegate.swift in Sources */,
+				3AA2FDB92B6350DC00F73924 /* NewPropertyAddViewController.swift in Sources */,
 				3A2F8FAC2B53DC60007D31C6 /* PropertyListViewController.swift in Sources */,
 				3A2F8FAE2B53DC7A007D31C6 /* PropertyFavouritesViewController.swift in Sources */,
 				3A2F8F9A2B53DB8C007D31C6 /* SceneDelegate.swift in Sources */,
@@ -318,6 +326,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -378,6 +387,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

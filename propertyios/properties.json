@@ -1,0 +1,66 @@
+[
+    {
+        "address": "10,Main Street,Cairns,Qld",
+        "imageName": "house1.jpg",
+        "thumbnailName": "thumbnail_house1.jpg",
+        "type": "House",
+        "price": "250,000"
+    },
+    {
+        "address": "515,Allen St,Cairns,Qld",
+        "imageName": "unit1.jpg",
+        "thumbnailName": "thumbnail_unit1.jpg",
+        "type": "Unit",
+        "price": "150,435"
+    },
+    {
+        "address": "01,Collin St,Cairns,Qld",
+        "imageName": "land1.jpg",
+        "thumbnailName": "thumbnail_land1.jpg",
+        "type": "Land",
+        "price": "550,200"
+    },
+    {
+        "address": "42, Ocean View Drive, Cairns, Qld",
+        "imageName": "house2.jpg",
+        "thumbnailName": "thumbnail_house2.jpg",
+        "type": "House",
+        "price": "380,000"
+    },
+    {
+        "address": "220, Sunset Boulevard, Cairns, Qld",
+        "imageName": "land2.jpg",
+        "thumbnailName": "thumbnail_land2.jpg",
+        "type": "Land",
+        "price": "280,750"
+    },
+    {
+        "address": "789, Pine Grove, Cairns, Qld",
+        "imageName": "unit2.jpg",
+        "thumbnailName": "thumbnail_unit2.jpg",
+        "type": "Unit",
+        "price": "420,900"
+    },
+    {
+        "address": "30, Mountain View Crescent, Cairns, Qld",
+        "imageName": "house3.jpg",
+        "thumbnailName": "thumbnail_house3.jpg",
+        "type": "House",
+        "price": "310,500"
+    },
+    {
+        "address": "124, Coral Way, Cairns, Qld",
+        "imageName": "unit3.jpg",
+        "thumbnailName": "thumbnail_unit3.jpg",
+        "type": "Unit",
+        "price": "195,800"
+    },
+    {
+        "address": "15, Green Valley, Cairns, Qld",
+        "imageName": "land3.jpg",
+        "thumbnailName": "thumbnail_land3.jpg",
+        "type": "Land",
+        "price": "630,000"
+    }
+]
+

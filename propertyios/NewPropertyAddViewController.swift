@@ -70,12 +70,11 @@ class NewPropertyAddViewController: UIViewController, UITextFieldDelegate {
         
         
         guard let price = Double(priceText) else { return }
-                  
+        
         
         let newProperty = Property(address: address, imageName: "new.jpg", thumbnailName: "thumbnail_new.jpg", type: propertyType, price: formatPriceWithCommas(price))
         delegate?.add(property: newProperty)
         dismiss(animated: true)
-        print("he")
     }
     
     @IBAction func didTapCancel(_ sender: Any) {

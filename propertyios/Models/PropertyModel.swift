@@ -14,7 +14,6 @@ class PropertyModel {
     
     init() {
         if let url = Bundle.main.url(forResource: jsondata, withExtension: file_extension){
-            print(url)
             do {	
                 let data = try Data(contentsOf: url)
                 properties = try JSONDecoder().decode([Property].self, from: data)

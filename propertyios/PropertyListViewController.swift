@@ -8,7 +8,7 @@
 import UIKit
 
 class PropertyListViewController: UIViewController {
-
+    
     @IBOutlet weak var propertyTable: UITableView!
     
     var model = PropertyModel()
@@ -18,14 +18,16 @@ class PropertyListViewController: UIViewController {
         super.viewDidLoad()
         
         propertyTable.dataSource = self
+        setupTapGesture()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPropertyDetailsSeg"{
-            if let indexPath = propertyTable.indexPathForSelectedRow{
-                let property = model.properties[indexPath.row]
-                let detailVC = segue.destination as? PropertyDetailsViewController
-                detailVC?.property = property
+       
+        if segue.identifier == "showPropertyDetailsSeg" {
+            if let destinationVC = segue.destination as? PropertyDetailsViewController {
+                if let data = sender as? Property {
+                    destinationVC.property = data
+                }
             }
         } else if segue.identifier == "addPropertySeg"{
             let navVC = segue.destination as? UINavigationController
@@ -33,7 +35,38 @@ class PropertyListViewController: UIViewController {
             addVC?.delegate = self
         }
     }
-    	
+    
+    func setupTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tapGesture.numberOfTapsRequired = 1
+        propertyTable.addGestureRecognizer(tapGesture)
+        
+        let doubleTapGesture = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap(_:)))
+        doubleTapGesture.numberOfTapsRequired = 2
+        propertyTable.addGestureRecognizer(doubleTapGesture)
+        
+        tapGesture.require(toFail: doubleTapGesture)
+    }
+    
+    @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        if gesture.state == .ended {
+            print("Single Tap occured")
+            if let indexPath = propertyTable.indexPathForRow(at: gesture.location(in: propertyTable)) {
+                let property = model.properties(forType: selectedType)[indexPath.row]
+                print(property)
+                performSegue(withIdentifier: "showPropertyDetailsSeg", sender: property)
+                
+            }
+        }
+    }
+    
+    @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
+        if gesture.state == .ended {
+            if let indexPath = propertyTable.indexPathForRow(at: gesture.location(in: propertyTable)) {
+                print("Double tap detected on cell at row \(indexPath.row)")
+            }
+        }
+    }
     @IBAction func onFIlterChange(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:

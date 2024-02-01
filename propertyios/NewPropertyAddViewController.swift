@@ -1,10 +1,3 @@
-//
-//  NewPropertyAddViewController.swift
-//  propertyios
-//
-//  Created by user244035 on 1/26/24.
-//
-
 import UIKit
 
 protocol AddPropertyDelegate {

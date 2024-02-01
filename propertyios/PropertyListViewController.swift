@@ -1,28 +1,29 @@
-//
-//  PropertyListViewController.swift
-//  propertyios
-//
-//  Created by user244035 on 1/14/24.
-//
-
 import UIKit
+
+// Protocol to handle property addition to favorites
+protocol AddToFavouriteDelegate {
+    func makeFavourite(property: Property)
+}
 
 class PropertyListViewController: UIViewController {
     
     @IBOutlet weak var propertyTable: UITableView!
     
-    var model = PropertyModel()
+    var model = PropertyModel.shared
     var selectedType: PropertyType?
+    
+    var delegate: AddToFavouriteDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         propertyTable.dataSource = self
+        propertyTable.delegate = self
         setupTapGesture()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
+        // Handle the preparation for segues
         if segue.identifier == "showPropertyDetailsSeg" {
             if let destinationVC = segue.destination as? PropertyDetailsViewController {
                 if let data = sender as? Property {
@@ -37,6 +38,7 @@ class PropertyListViewController: UIViewController {
     }
     
     func setupTapGesture() {
+        // Set up tap gestures for single and double tap
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         tapGesture.numberOfTapsRequired = 1
         propertyTable.addGestureRecognizer(tapGesture)
@@ -49,25 +51,32 @@ class PropertyListViewController: UIViewController {
     }
     
     @objc func handleTap(_ gesture: UITapGestureRecognizer) {
+        // Handle single tap on property cell
         if gesture.state == .ended {
             print("Single Tap occured")
             if let indexPath = propertyTable.indexPathForRow(at: gesture.location(in: propertyTable)) {
                 let property = model.properties(forType: selectedType)[indexPath.row]
                 print(property)
                 performSegue(withIdentifier: "showPropertyDetailsSeg", sender: property)
-                
             }
         }
     }
     
     @objc func handleDoubleTap(_ gesture: UITapGestureRecognizer) {
+        // Handle double tap on property cell
         if gesture.state == .ended {
             if let indexPath = propertyTable.indexPathForRow(at: gesture.location(in: propertyTable)) {
-                print("Double tap detected on cell at row \(indexPath.row)")
+                let property = model.properties(forType: selectedType)[indexPath.row]
+                model.addToFavourite(property: property)
+                delegate?.makeFavourite(property: property)
+                print("Double tap detected on cell")
+                print(model.favourites)
             }
         }
     }
+    
     @IBAction func onFIlterChange(_ sender: UISegmentedControl) {
+        // Handle filter change based on segment control
         switch sender.selectedSegmentIndex {
         case 0:
             selectedType = nil
@@ -81,16 +90,18 @@ class PropertyListViewController: UIViewController {
             break
         }
         propertyTable.reloadData()
-        print("FIlter changed")
+        print("Filter changed")
     }
 }
 
+// MARK: - Table View Data Source
 extension PropertyListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.properties(forType: selectedType).count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // Configure the property cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "propertyCell", for: indexPath)
         let property = model.properties(forType: selectedType)[indexPath.row]
         cell.textLabel?.text = property.type.rawValue
@@ -98,21 +109,24 @@ extension PropertyListViewController: UITableViewDataSource{
         cell.imageView?.image = UIImage(named: property.thumbnailName)
         return cell
     }
-    
-    
 }
 
+// MARK: - Table View Delegate
 extension PropertyListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return 70
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Deselect the selected row
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
+// MARK: - Add Property Delegate
 extension PropertyListViewController: AddPropertyDelegate{
     func add(property: Property) {
+        // Handle property addition
         model.add(property: property)
         propertyTable.reloadData()
     }

@@ -1,9 +1,3 @@
-//
-//  Property.swift
-//  propertyios
-//
-//  Created by user244035 on 1/14/24.
-//
 
 import Foundation
 

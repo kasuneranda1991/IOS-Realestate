@@ -7,6 +7,7 @@ class PropertyDetailsViewController: UIViewController {
     @IBOutlet weak var address: UILabel!
     
     var property: Property!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,12 +21,14 @@ class PropertyDetailsViewController: UIViewController {
         }
     }
     
+    // Navigate to the previous view
     private func navigateBack(){
         if let navigationController = navigationController {
             navigationController.popViewController(animated: true)
         }
     }
     
+    // Format the address by splitting ","
     private func addressFormatter(forAddress address: String) -> String {
         let items = address.split(separator: ",")
         let formattedAddress = items.joined(separator: "\n")

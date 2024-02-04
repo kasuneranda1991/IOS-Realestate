@@ -69,8 +69,6 @@ class PropertyListViewController: UIViewController {
                 let property = model.properties(forType: selectedType)[indexPath.row]
                 model.addToFavourite(property: property)
                 delegate?.makeFavourite(property: property)
-                print("Double tap detected on cell")
-                print(model.favourites)
             }
         }
     }
@@ -90,7 +88,6 @@ class PropertyListViewController: UIViewController {
             break
         }
         propertyTable.reloadData()
-        print("Filter changed")
     }
 }
 
@@ -130,4 +127,4 @@ extension PropertyListViewController: AddPropertyDelegate{
         model.add(property: property)
         propertyTable.reloadData()
     }
-}
+}	
